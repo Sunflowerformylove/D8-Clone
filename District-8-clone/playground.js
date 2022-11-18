@@ -1,5 +1,6 @@
 //DOM and animation functions
 const header = document.querySelector(".header");
+const company_name = document.querySelector(".comp-name");
 const menu_modal = document.querySelector(".menu-modal");
 const menu_icon = document.querySelector(".menu-icon");
 const menu_card = document.querySelector(".menu-card");
@@ -44,6 +45,7 @@ const homespaceCurrentSection = document.querySelector(
 );
 const homespaceCurrentPage = document.querySelector(".homespace__current-page");
 const music = document.querySelector(".music-one");
+const mobile_responsive = window.matchMedia("(min-width: 300px) and (max-width: 599px)")
 const banner_background = [
   "/Assets/Images/tote-desktop-banner-result_1663575080_large.webp",
   "/Assets/Images/desktop-banner-joss-opted_1662017351_grande.webp",
@@ -454,6 +456,13 @@ function sound_stop(element) {
   element.pause();
 }
 
+function changeCompName(mobile_responsive) {
+  if (mobile_responsive.matches) //if match mobile media max-width 
+  {
+    company_name.innerHTML = "<img src = '/Assets/Images/d8-logo-small-white_1611737208.svg' class = 'mobile-responsive__comp-name'/>";
+  }
+}
+
 //next and previous images
 right_arrow_product.addEventListener("click", (e) => {
   if (index_product >= getObjectSize(cur_section) - 2) {
@@ -596,4 +605,8 @@ drift.addEventListener("click", (e) => {
     }
     sound_stop(music);
   }
+});
+
+mobile_responsive.addEventListener('change', (e) => {
+  changeCompName(mobile_responsive);
 });

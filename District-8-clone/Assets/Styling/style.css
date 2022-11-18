@@ -414,6 +414,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   right: 5%;
   top: 8%;
 }
@@ -425,7 +426,6 @@
 }
 
 .product-type {
-  margin: 0 2rem;
   color: #b6b7b5;
   cursor: pointer;
 }
@@ -1157,12 +1157,15 @@
 
   .product-title {
     top: 5%;
-    left: 5%;
+    left: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .product-bar {
     width: 100%;
-    left: -5%;
+    right: 0;
+    justify-content: space-evenly;
   }
 
   .product-descript{
@@ -1197,8 +1200,9 @@
   }
 
   .drift__title{
-    width: 55%;
-    left: 25%;
+    width: 100%;
+    left: 0;
+    text-align: center;
   }
 
   .drift__discover{
@@ -1206,9 +1210,9 @@
   }
 
   .drift__summary{
-    width: 90%;
+    width: 80%;
     top: 25%;
-    left: 5%;
+    left: 10%;
   }
 
   .descript-card{
@@ -1335,7 +1339,9 @@
     width: 90%;
     height: 40%;
     top: 15%;
-    left: 5%
+    left: 5%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .news > .news__headline{
@@ -1354,7 +1360,7 @@
   }
 
   .news > .news__more{
-    left: 41%;
+    left: 80%;
     top: 78%;
     font-size: 1.8rem !important;
     font-weight: bolder;
@@ -1384,5 +1390,21 @@
   
   .menu-card__close{
     display: block;
+  }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 599px){
+  .mobile-responsive__comp-name{
+    scale: 0.8;
+  }
+
+  .menu-modal.active{
+    display: none;
+  }
+
+  .menu-card{
+    width: 100%;
+    height: 100%;
   }
 }
